@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>details!</h1>
+    <h2>{{hero.superhero_name}}</h2>
+    <h2>{{hero.alter_ego_name}}</h2>
+    <h2>{{hero.primary_ability}}</h2>
+    <h2>{{hero.secondary_ability}}</h2>
+    <h2>{{hero.catch_phrase}}</h2>
+
+    <a href="{% url 'myapp:edit_existing_superhero' hero.id %}"
+      >Edit your hero!</a
+    >
+  </body>
+</html>
