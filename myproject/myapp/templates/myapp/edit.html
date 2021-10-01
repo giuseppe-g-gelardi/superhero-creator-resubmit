@@ -8,7 +8,7 @@
   </head>
   <body>
     <form
-      action="{% url 'myapp:edit_existing_superhero' hero.id %}"
+      action="{% url 'myapp:edit_existing_superhero' superhero.id %}"
       method="post"
     >
       {% csrf_token %} <br />

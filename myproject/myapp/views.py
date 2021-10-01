@@ -14,8 +14,11 @@ def index(request):
 
 def detail(request, superhero_id):
     superhero = Superheroes.objects.get(pk=superhero_id)
+    context = {
+        'superhero': superhero
+    }
 
-    return render(request, 'myapp/details.html', {'hero': superhero})
+    return render(request, 'myapp/details.html', context)
 
 def create(request):
     if request.method == 'POST':
@@ -37,31 +40,31 @@ def create(request):
         return render(request, 'myapp/create.html')
 
 def edit(request, superhero_id):
-    selected_hero = Superhero.objects.get(pk=hero_id)
+    superhero = Superheroes.objects.get(pk=superhero_pk)
     if request.method == "POST":
-        selected_hero.name = request.POST.get('name')
-        selected_hero.alter_ego_name = request.POST.get('alter_ego_name')
-        selected_hero.primary_super_ability = request.POST.get('primary_super_ability')
-        selected_hero.secondary_super_ability = request.POST.get('secondary_super_ability')
-        selected_hero.catchphrase = request.POST.get('catchphrase')
-        selected_hero.save()
+        superhero.superhero_name = request.POST.get('name')
+        superhero.alter_ego_name = request.POST.get('alter_ego')
+        superhero.primary_ability = request.POST.get('primary_ability')
+        superhero.secondary_ability = request.POST.get('secondary_ability')
+        superhero.catchphrase = request.POST.get('catchphrase')
+        superhero.save()
         context = {
-            "selected_hero": selected_hero
+            "superhero": superhero
         }
-        return render(request, 'superhero/detail.html', context)
+        return render(request, 'myapp/details.html', context)
     else:
         context = {
-            "selected_hero": selected_hero
+            "superhero": superhero
         }
-        return render(request, 'superhero/edit.html', context)
+        return render(request, 'myapp/edit.html', context)
 
-def delete(request, hero_id):
-    selected_hero = Superhero.objects.get(pk=hero_id)
+def delete(request, superhero_id):
+    superhero = Superheroes.objects.get(pk=superhero_id)
     if request.method == "POST":
-        selected_hero.delete()
+        superhero.delete()
         return index(request)
     else:
         context = {
-            "selected_hero": selected_hero
+            "superhero": superhero
         }
-        return render(request, 'superhero/delete.html', context)
+        return render(request, 'myapp/delete.html', context)

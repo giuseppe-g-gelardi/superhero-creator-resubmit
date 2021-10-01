@@ -8,14 +8,23 @@
   </head>
   <body>
     <h1>details!</h1>
-    <h2>{{hero.superhero_name}}</h2>
-    <h2>{{hero.alter_ego_name}}</h2>
-    <h2>{{hero.primary_ability}}</h2>
-    <h2>{{hero.secondary_ability}}</h2>
-    <h2>{{hero.catch_phrase}}</h2>
+    <h2>{{superhero.superhero_name}}</h2>
+    <h2>{{superhero.alter_ego_name}}</h2>
+    <h2>{{superhero.primary_ability}}</h2>
+    <h2>{{superhero.secondary_ability}}</h2>
+    <h2>{{superhero.catch_phrase}}</h2>
 
-    <a href="{% url 'myapp:edit_existing_superhero' hero.id %}"
-      >Edit your hero!</a
-    >
+    <div class="container-fluid">
+    <a href="{% url 'myapp:edit_existing_superhero' superhero.id %}" class="btn btn-primary">Edit Superhero</a>
+
+
+    <a href="{% url 'myapp:delete_existing_superhero' superhero.id %}" class="btn btn-primary">Delete Superhero</a>
+    
+    <a href="{% url 'myapp:index' %}" class="btn btn-primary">Select New Hero</a>
+    
+    </div>
+
+
+    
   </body>
 </html>

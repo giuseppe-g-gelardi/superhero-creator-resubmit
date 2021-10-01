@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Superhero</title>
+    
+</head>
+<body>
+    <h1 class="containter"> Are you sure you want to delete {{selected_hero.name}}? </h1>
+
+    <form action="{% url 'myapp:detail' superhero.id %}" method="get">
+
+        {% csrf_token %}
+
+        <input type="submit" value="Cancel" class="btn btn-primary">
+    </form>
+
+
+    <form action="{% url 'myapp:delete_existing_superhero' superhero.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+
+    
+</body>
+</html>

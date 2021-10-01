@@ -9,7 +9,7 @@
   <body>
     <h1>Hello, Superheroes maybe? plz...</h1>
 
-    <!-- <form action="{% url 'myapp:create_new_superhero' %}" method="post">
+    <form action="{% url 'myapp:create_new_superhero' %}" method="post">
       {% csrf_token %} <br />
       Name: <input type="text" name="name" id="name" /><br />
       Alter ego: <input type="text" name="alter_ego" id="alter_ego" /><br />
@@ -26,7 +26,7 @@
       Catchphrase:
       <input type="text" name="catchphrase" id="catchphrase" /><br />
       <input type="submit" value="Add new!" />
-    </form> -->
+    </form>
 
     <ul>
       {% for hero in all_superheroes %}
