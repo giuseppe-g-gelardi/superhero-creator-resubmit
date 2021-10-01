@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'movie_database',
+        'NAME': 'superhero_database',
         'USER': 'root',
         'PASSWORD': 'Rycbar822',
         'HOST': '127.0.0.1',
