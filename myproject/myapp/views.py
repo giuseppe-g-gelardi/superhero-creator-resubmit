@@ -40,7 +40,7 @@ def create(request):
         return render(request, 'myapp/create.html')
 
 def edit(request, superhero_id):
-    superhero = Superheroes.objects.get(pk=superhero_pk)
+    superhero = Superheroes.objects.get(pk=superhero_id)
     if request.method == "POST":
         superhero.superhero_name = request.POST.get('name')
         superhero.alter_ego_name = request.POST.get('alter_ego')

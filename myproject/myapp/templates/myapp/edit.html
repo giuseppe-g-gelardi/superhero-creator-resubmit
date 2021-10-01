@@ -12,27 +12,56 @@
       method="post"
     >
       {% csrf_token %} <br />
-      Name: <input type="text" name="name" id="name" /><br />
+      
+      Name: <input 
+        type="text" 
+        name="name" 
+        id="name" 
+        value="{{superhero.superhero_name}}"
+
+        /><br />
+      
       Alter ego:
       <input
         type="text"
         name="alter_ego"
         id="alter_ego"
-        value="{{hero.superhero_name}}"
+        value="{{superhero.alter_ego_name}}"
       /><br />
+      
       Primary ability:<input
         type="text"
         name="primary_ability"
         id="primary_ability"
+        value="{{superhero.primary_ability}}"
+
       /><br />
+      
       Secondary ability:<input
         type="text"
         name="secondary_ability"
         id="secondary_ability"
+        value="{{superhero.secondary_ability}}"
+
       /><br />
+      
       Catchphrase:
-      <input type="text" name="catchphrase" id="catchphrase" /><br />
+      <input 
+        type="text" 
+        name="catchphrase" 
+        id="catchphrase" 
+        value="{{superhero.catch_phrase}}"
+
+
+        /><br />
+
       <input type="submit" value="Edit your hero!" />
     </form>
   </body>
 </html>
+
+{% comment %} <h2>{{superhero.superhero_name}}</h2>
+    <h2>{{superhero.alter_ego_name}}</h2>
+    <h2>{{superhero.primary_ability}}</h2>
+    <h2>{{superhero.secondary_ability}}</h2>
+    <h2>{{superhero.catch_phrase}}</h2> {% endcomment %}
