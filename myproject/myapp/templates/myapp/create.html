@@ -12,32 +12,82 @@
 
 
 
+  <div class="container-fluid">
+      <div class="row">
+          <div class="heading col-sm-12">
+            <h1>Create a new superhero!</h1>
+          </div>
 
-  <form action="{% url 'myapp:create_new_superhero' %}" method="post">
-      {% csrf_token %} <br />
-      Name: <input type="text" name="name" id="name" /><br />
-      Alter ego: <input type="text" name="alter_ego" id="alter_ego" /><br />
-      Primary ability:<input
-        type="text"
-        name="primary_ability"
-        id="primary_ability"
-      /><br />
-      Secondary ability:<input
-        type="text"
-        name="secondary_ability"
-        id="secondary_ability"
-      /><br />
-      Catchphrase:
-      <input type="text" name="catchphrase" id="catchphrase" /><br />
-      <input type="submit" value="Add new!" />
-      <a href="{% url 'myapp:index' %}" class="btn btn-primary">Home</a>
-    </form>
+
+          <div class="Lblank col-sm-1"></div>
+
+
+
+
+
+          <div class="L col col-sm-5">
+            <form action="{% url 'myapp:create_new_superhero' %}" method="post">
+              {% csrf_token %} <br />
+              <p>Fill out this form!</p>
+              Name: <br><input 
+                type="text" 
+                name="name" 
+                id="name" 
+                /><br />
+
+              Alter ego: <input 
+                type="text" 
+                name="alter_ego" 
+                id="alter_ego" 
+                /><br />
+
+              Primary ability:<input
+                type="text"
+                name="primary_ability"
+                id="primary_ability"
+              /><br />
+
+              Secondary ability:<input
+                type="text"
+                name="secondary_ability"
+                id="secondary_ability"
+              /><br />
+
+              Catchphrase:
+              <input type="text" name="catchphrase" id="catchphrase" /><br /><br>
+              <input type="submit" value="Add new!" />
+              <a href="{% url 'myapp:index' %}" class="btn btn-primary">Home</a>
+            </form>
+          </div>
+
+
+          <div class="R col col-sm-5">
+          {% load static %}
+          <img src="{% static 'myapp/avengers.jpg' %}" alt="joker" class="container-fluid"></img>
+          </div>
+
+
+
+
+
+
+
+          <div class="Rblank col-sm-1"></div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+  
       
 
 
 
-    {% load static %}
-    <img src="{% static 'myapp/avengers.jpg' %}" alt="joker" class="container-fluid"></img>
+    
 
 
 

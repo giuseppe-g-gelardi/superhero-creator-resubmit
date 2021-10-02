@@ -8,57 +8,97 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
+
+
   <body>
-    <form
-      action="{% url 'myapp:edit_existing_superhero' superhero.id %}"
-      method="post"
-    >
-      {% csrf_token %} <br />
-      
-      Name: <input 
-        type="text" 
-        name="name" 
-        id="name" 
-        value="{{superhero.superhero_name}}"
-
-        /><br />
-      
-      Alter ego:
-      <input
-        type="text"
-        name="alter_ego"
-        id="alter_ego"
-        value="{{superhero.alter_ego_name}}"
-      /><br />
-      
-      Primary ability:<input
-        type="text"
-        name="primary_ability"
-        id="primary_ability"
-        value="{{superhero.primary_ability}}"
-
-      /><br />
-      
-      Secondary ability:<input
-        type="text"
-        name="secondary_ability"
-        id="secondary_ability"
-        value="{{superhero.secondary_ability}}"
-
-      /><br />
-      
-      Catchphrase:
-      <input 
-        type="text" 
-        name="catchphrase" 
-        id="catchphrase" 
-        value="{{superhero.catch_phrase}}"
 
 
-        /><br />
 
-      <input type="submit" value="Edit your hero!" />
-    </form>
+
+    <div class="container">
+
+      <div class="row">
+          <div class="col-sm-6">
+                  <h1 class="container-fluid">Edit your superhero!</h1>
+                  <br>
+                  {% load static %}
+                  <img src="{% static 'myapp/wham.jpg' %}" alt="joker" class="container-fluid"></img>
+                  <form
+                    action="{% url 'myapp:edit_existing_superhero' superhero.id %}"
+                    method="post"
+                  >
+                    {% csrf_token %} <br />
+                    
+                    Name: <br><input 
+                      type="text" 
+                      name="name" 
+                      id="name" 
+                      value="{{superhero.superhero_name}}"
+
+                      /><br />
+                    
+                    Alter ego:
+                    <input
+                      type="text"
+                      name="alter_ego"
+                      id="alter_ego"
+                      value="{{superhero.alter_ego_name}}"
+                    /><br />
+                    
+                    Primary ability:<input
+                      type="text"
+                      name="primary_ability"
+                      id="primary_ability"
+                      value="{{superhero.primary_ability}}"
+
+                    /><br />
+                    
+                    Secondary ability:<input
+                      type="text"
+                      name="secondary_ability"
+                      id="secondary_ability"
+                      value="{{superhero.secondary_ability}}"
+
+                    /><br />
+                    
+                    Catchphrase:
+                    <input 
+                      type="text" 
+                      name="catchphrase" 
+                      id="catchphrase" 
+                      value="{{superhero.catch_phrase}}"
+
+
+                      /><br />
+
+              <input type="submit" value="Edit your hero!" />
+              <a href="{% url 'myapp:index' %}" class="btn btn-primary">Home</a>
+
+            </form>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <div class="col-sm-6">
+        
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    
   </body>
 </html>
 

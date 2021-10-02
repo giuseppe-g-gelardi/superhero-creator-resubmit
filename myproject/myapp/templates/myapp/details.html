@@ -9,26 +9,71 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
   <body>
-    <h1 class="container-fluid">{{superhero.superhero_name}}</h1>
-    <ul>
-      <li class="list-group-item">Alter ego: {{superhero.alter_ego_name}}</li>
-      <li class="list-group-item">Primary ability:{{superhero.primary_ability}}</li>
-      <li class="list-group-item">Secondary ability:{{superhero.secondary_ability}}</li>
-      <li class="list-group-item">Catchphrase{{superhero.catch_phrase}}</li>
 
-    </ul>
 
-    
+
+
 
     <div class="container-fluid">
-    <a href="{% url 'myapp:edit_existing_superhero' superhero.id %}" class="btn btn-primary">Edit Superhero</a>
+      <div class="row">
+          <div class="col-sm-12">
+            <h1>Hero details</h1>
+          </div>
 
 
-    <a href="{% url 'myapp:delete_existing_superhero' superhero.id %}" class="btn btn-primary">Delete Superhero</a>
+
+
+
+
+
+          {% load static %}
+          <img src="{% static 'myapp/justiceleague.jpg' %}" alt="joker" class="container-fluid"></img>
+
+
+
+          <h1 class="container">{{superhero.superhero_name}}</h1>
+              <ul>
+                <li class="list-group-item">Alter ego: {{superhero.alter_ego_name}}</li>
+                <li class="list-group-item">Primary ability:{{superhero.primary_ability}}</li>
+                <li class="list-group-item">Secondary ability:{{superhero.secondary_ability}}</li>
+                <li class="list-group-item">Catchphrase{{superhero.catch_phrase}}</li>
+
+              </ul>
+
+              
+
+              <div class="container-fluid">
+              <a href="{% url 'myapp:edit_existing_superhero' superhero.id %}" class="btn btn-primary">Edit Superhero</a>
+
+
+              <a href="{% url 'myapp:delete_existing_superhero' superhero.id %}" class="btn btn-primary">Delete Superhero</a>
+              
+              <a href="{% url 'myapp:index' %}" class="btn btn-primary">Home</a>
     
-    <a href="{% url 'myapp:index' %}" class="btn btn-primary">Select New Hero</a>
-    
+          </div>
+
+
+
+
+
+
+
+
+      </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
     
