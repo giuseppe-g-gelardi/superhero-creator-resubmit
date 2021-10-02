@@ -62,8 +62,7 @@ def delete(request, superhero_id):
     superhero = Superheroes.objects.get(pk=superhero_id)
     if request.method == "POST":
         superhero.delete()
-        # return index(request)
-        return redirect('index')
+        return HttpResponseRedirect(reverse('myapp:index'))
     else:
         context = {
             "superhero": superhero
