@@ -4,15 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>superhero details</title>
   </head>
   <body>
-    <h1>details!</h1>
-    <h2>{{superhero.superhero_name}}</h2>
-    <h2>{{superhero.alter_ego_name}}</h2>
-    <h2>{{superhero.primary_ability}}</h2>
-    <h2>{{superhero.secondary_ability}}</h2>
-    <h2>{{superhero.catch_phrase}}</h2>
+    <h1 class="container-fluid">{{superhero.superhero_name}}</h1>
+    <ul>
+      <li class="list-group-item">Alter ego: {{superhero.alter_ego_name}}</li>
+      <li class="list-group-item">Primary ability:{{superhero.primary_ability}}</li>
+      <li class="list-group-item">Secondary ability:{{superhero.secondary_ability}}</li>
+      <li class="list-group-item">Catchphrase{{superhero.catch_phrase}}</li>
+
+    </ul>
+
+    
 
     <div class="container-fluid">
     <a href="{% url 'myapp:edit_existing_superhero' superhero.id %}" class="btn btn-primary">Edit Superhero</a>

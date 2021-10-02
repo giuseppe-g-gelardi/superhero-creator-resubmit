@@ -7,7 +7,11 @@
     <title>CREATE!</title>
   </head>
   <body>
-    <form action="{% url 'myapp:create_new_superhero' %}" method="post">
+
+
+
+
+  <form action="{% url 'myapp:create_new_superhero' %}" method="post">
       {% csrf_token %} <br />
       Name: <input type="text" name="name" id="name" /><br />
       Alter ego: <input type="text" name="alter_ego" id="alter_ego" /><br />
@@ -25,5 +29,34 @@
       <input type="text" name="catchphrase" id="catchphrase" /><br />
       <input type="submit" value="Add new!" />
     </form>
+
+
+
+
+
+
+
+
+
+
+
+    {% comment %} <form action="{% url 'myapp:create_new_superhero' %}" method="post">
+      {% csrf_token %} <br />
+      Name: <input type="text" name="name" id="name" /><br />
+      Alter ego: <input type="text" name="alter_ego" id="alter_ego" /><br />
+      Primary ability:<input
+        type="text"
+        name="primary_ability"
+        id="primary_ability"
+      /><br />
+      Secondary ability:<input
+        type="text"
+        name="secondary_ability"
+        id="secondary_ability"
+      /><br />
+      Catchphrase:
+      <input type="text" name="catchphrase" id="catchphrase" /><br />
+      <input type="submit" value="Add new!" />
+    </form> {% endcomment %}
   </body>
 </html>
