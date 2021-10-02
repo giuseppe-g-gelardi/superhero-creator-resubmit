@@ -27,24 +27,6 @@
     <img src="{% static 'myapp/joker.jpeg' %}" alt="joker" class="container-fluid"></img>
 
 
-    {% comment %} <form action="{% url 'myapp:create_new_superhero' %}" method="post">
-      {% csrf_token %} <br />
-      Name: <input type="text" name="name" id="name" /><br />
-      Alter ego: <input type="text" name="alter_ego" id="alter_ego" /><br />
-      Primary ability:<input
-        type="text"
-        name="primary_ability"
-        id="primary_ability"
-      /><br />
-      Secondary ability:<input
-        type="text"
-        name="secondary_ability"
-        id="secondary_ability"
-      /><br />
-      Catchphrase:
-      <input type="text" name="catchphrase" id="catchphrase" /><br />
-      <input type="submit" value="Add new!" />
-    </form> {% endcomment %}
 
 
     <br>
@@ -56,9 +38,12 @@
       {% for hero in all_superheroes %}
       <li>
         <h2>{{hero.superhero_name}}</h2>
-        <a href="{% url 'myapp:detail' hero.id %}">more info</a>
+        <a href="{% url 'myapp:detail' hero.id %}" class="btn btn-primary">more info</a>
+
       </li>
       {% endfor %}
     </ul>
+
+
   </body>
 </html>

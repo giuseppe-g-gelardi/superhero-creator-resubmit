@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import Superheroes
@@ -62,7 +62,8 @@ def delete(request, superhero_id):
     superhero = Superheroes.objects.get(pk=superhero_id)
     if request.method == "POST":
         superhero.delete()
-        return index(request)
+        # return index(request)
+        return redirect('index')
     else:
         context = {
             "superhero": superhero
